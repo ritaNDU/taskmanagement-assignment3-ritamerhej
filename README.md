@@ -44,10 +44,10 @@ It's where all images and videos and assets in general are stored. There's only 
 
 It is divided into:
 
-1. atoms/ which is where the smallest pieces of components like buttons and inputs are implemented.
-2. molecules/ which is where the atoms are used to create the structures that need to be used in the interface, like the Task component for example that specifies how a single task should be rendered.
-3. organisms/ is where molecules are used to create features for the app. For example, there's the logic to handle tasks.
-4. templates/ this is where organisms are grouped to create the different views in the app.
+1. **atoms/** which is where the smallest pieces of components like buttons and inputs are implemented.
+2. **molecules/** which is where the atoms are used to create the structures that need to be used in the interface, like the Task component for example that specifies how a single task should be rendered.
+3. **organisms/** is where molecules are used to create features for the app. For example, there's the logic to handle tasks.
+4. **templates/** this is where organisms are grouped to create the different views in the app.
 
 ### The hooks/ folder:
 
