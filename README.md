@@ -1,40 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Planify V1.0
 
-## Getting Started
+## Description
 
-First, run the development server:
+Planify is a web application, developed with Next.js, that helps you organise your day to day tasks.
+It lets you create new tasks and check each out as you complete it.
+This version of Planify introduced a brand new task details page.
+To start your day the right way, use Planify!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to run the code
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository using the following command:
+   `git clone https://github.com/ritaNDU/taskmanagement-assignment3-ritamerhej.git`
+2. Inside the cloned repository run either of the following commands:
+   `yarn` or `npm install`
+3. To start the server, run either of these commands:
+   `yarn dev` or `npm run dev`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## How I got organized
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+I started by reading the Next.js docs to get a better grasp of it, then I identified all the components I could re-use from assignment 2 and I copied them. I then planned what I had to do and implemented the logic in incrememnts. Finally I added the missing styles.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Challenges Found
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Understanding GetServerSideProps and Next.js in general**
+   It was difficult, but with some next.js docs, some googling and some chatGPT, I got something working. It's not optimal of course but it's a good start.
 
-## Learn More
+2. **Persisting data**
+   I first wanted to persist the tasks data into localstorage, so I tried creating a useLocalStorage custom hook, and tried adding a useEffect to get the tasks from localstorage on mount and store back the tasks on unmount or when the tasks list changed. It didn't work. So, I moved on. I tried using redux-persist, and all worked out.
 
-To learn more about Next.js, take a look at the following resources:
+## Folder Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The code is all located in the src/ folder.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### The src/ folder:
 
-## Deploy on Vercel
+It is divided into the components/ folder, the features/ folder and the data/ folder.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### The assets/ folder:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+It's where all images and videos and assets in general are stored. There's only an image for now.
+
+### The components/ folder:
+
+It is divided into:
+
+1. atoms/ which is where the smallest pieces of components like buttons and inputs are implemented.
+2. molecules/ which is where the atoms are used to create the structures that need to be used in the interface, like the Task component for example that specifies how a single task should be rendered.
+3. organisms/ is where molecules are used to create features for the app. For example, there's the logic to handle tasks.
+4. templates/ this is where organisms are grouped to create the different views in the app.
+
+### The hooks/ folder:
+
+This is where all custom hooks are stored. There's only 1 for now.
+
+### The pages/ folder:
+
+This is where all pages are stored.
+This folder is used for routing.
+
+- index.tsx is the homepage. It's the page used for tasks management.
+- task is where details are displayed. Users are redirected to the correct task page depending on an id (I've called it slug but it's an id)
+- \_error is where users get redirected whenever there's a 404 error or 500 error, or any other error.
+
+### The store/ folder:
+
+This is where the redux store is created and managed.
+
+### The styles/ folder:
+
+This is where the global style is stored.
+
+### The data/ folder:
+
+It contains data, and interfaces to structure data objects.

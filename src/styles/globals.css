@@ -9,3 +9,14 @@
 .btn-primary {
   @apply bg-[#BFBFBF] rounded-3xl p-2 px-3 shadow-lg hover:bg-[#818181] lg:text-base disabled:bg-[#d1d1d1] disabled:text-[#737373];
 }
+
+.logo p {
+  margin-top: -8px;
+  font-size: 0.8em;
+  letter-spacing: -0.5px;
+  word-spacing: -0.2px;
+}
+
+.logo h1 {
+  letter-spacing: 1px;
+}
