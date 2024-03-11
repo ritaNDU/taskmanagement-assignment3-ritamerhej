@@ -51,7 +51,7 @@ It is divided into:
 
 ### The hooks/ folder:
 
-This is where all custom hooks are stored. There's only 1 for now.
+This is where all custom hooks are stored. There's only 2 for now.
 
 ### The pages/ folder:
 
